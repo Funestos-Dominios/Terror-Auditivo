@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Colección Musical</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #eee;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #222;
+      padding: 1rem;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    .player {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background-color: #1c1c1c;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .playlist {
+      text-align: center;
+    }
+    .playlist button {
+      background-color: #444;
+      border: none;
+      color: #eee;
+      padding: 0.5rem 1rem;
+      margin: 0.25rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .playlist button:hover {
+      background-color: #666;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mi Colección Musical</h1>
+    <p>Reproductor mixto: YouTube y Bandcamp</p>
+  </header>
+
+  <div class="player">
+    <div class="video-container">
+      <iframe id="player" src="https://www.youtube.com/embed/trYcnQ0dhgM" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="playlist">
+      <button onclick="changeVideo('https://www.youtube.com/embed/trYcnQ0dhgM')">Canción 1</button>
+      <button onclick="changeVideo('https://www.youtube.com/embed/Ugx-7He5zdU')">Canción 2</button>
+      <button onclick="changeVideo('https://www.youtube.com/embed/HhxhDzF_GXg')">Canción 3</button>
+      <button onclick="changeVideo('https://www.youtube.com/embed/QVyhMJpiol0')">Canción 4</button>
+      <button onclick="changeVideo('https://bandcamp.com/EmbeddedPlayer/album=1234567890/size=large/bgcol=ffffff/linkcol=0687f5/track=9876543210/transparent=true/")">Bandcamp 1</button>
+    </div>
+  </div>
+
+  <script>
+    function changeVideo(url) {
+      document.getElementById('player').src = url;
+    }
+  </script>
+</body>
+</html>
